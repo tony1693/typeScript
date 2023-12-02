@@ -26,9 +26,8 @@ var Library = /** @class */ (function () {
     Library.prototype.getNumberOfBooks = function () {
         return this.books.length;
     };
-    Library.prototype.findByAuthor = function (author) {
-        var _this = this;
-        return this.books.filter(function (book) { return _this.books.toString() === author; });
+    Library.prototype.findByAuthor = function (authors) {
+        return this.books.filter(function (book) { return book.getAuthor() === authors; });
     };
     return Library;
 }());

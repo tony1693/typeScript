@@ -1,11 +1,11 @@
 import { Book } from "./book";
 
 export class Library{
-        private books:Book[];
+        public books:Book[];
         private address:string;
         private manager:string;
     
-    constructor(books:Book[] , address:string , manager:string){
+    constructor( books:[],address:string , manager:string){
         this.books = [];
         this.address = address;
         this.manager = manager;
@@ -29,8 +29,9 @@ export class Library{
     public getNumberOfBooks() {
         return this.books.length;
     }
-    public findByAuthor(author:string):Book[]{
-        return this.books.filter(book => this.books.toString() === author);
+    public findByAuthor(authors:string):Book[]{
+        return this.books.filter(book => book.getAuthor() === authors);
+
     }
 }
 
